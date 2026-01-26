@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/purity */
+import { ArrowLeftRight, ArrowRight, Download } from "lucide-react";
+import Button from "../components/Button";
 import React from "react";
+import AnimatedBorderButton from "../components/AnimatedBorderButton";
 
 const Hero = () => {
   return (
@@ -28,6 +31,40 @@ const Hero = () => {
             }}
           ></div>
         ))}
+      </div>
+      {/* Content */}
+      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left column -text content*/}
+          <div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-pretty">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                Software Engineer • React Specialist{" "}
+              </span>
+            </div>
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Crafting <span className="text-primary glow-text">digital</span>
+                <br />
+                experiences
+                <br />
+                <span className="font-serif italic font-normal">precision</span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-400">
+                I build scalable web applications using React, Next.js, and
+                modern technologies and deliver seamless user experiences.
+              </p>
+            </div>
+            {/* CTA Buttons */}
+            <Button size="lg">
+              Contact me <ArrowRight className="w-5 h-5" />
+            </Button>
+            <AnimatedBorderButton />
+          </div>
+          {/* Right column -profile image */}
+        </div>
       </div>
     </section>
   );
