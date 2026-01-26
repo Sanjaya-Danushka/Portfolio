@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "../components/Button";
+import { Menu } from "lucide-react";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
@@ -7,6 +9,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   return (
     <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
       <nav className="container mx-auto px-6 flex items-center justify-between">
@@ -16,8 +19,8 @@ const Navbar = () => {
         >
           PM<span className="text-primary">.</span>
         </a>
-        {/* Navigation Links */}
-        <div className="flex items-center gap-1">
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
@@ -31,10 +34,36 @@ const Navbar = () => {
           </div>
         </div>
         {/* CTA Button */}
-        <div>
-          <button></button>
+        <div className="hidden md:block">
+          <Button size="sm">
+            <a href="#contact">Contact Me</a>
+          </Button>
         </div>
+        {/* Mobile menu Button */}
+        <button className="md:hidden p-2 text-foreground" onClick={()=>setIsMobileMenuOpen((prev)=> !prev)}>
+          <Menu size={24} />
+        </button>
       </nav>
+
+      {/* Mobile Menu  */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden glass-strong">
+          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link, index) => (
+              <a
+                href={link.href}
+                key={index}
+                className="text-lg text-muted-foreground hover:text-foreground py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button>
+              <a href="#contact">Contact Me</a>
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
