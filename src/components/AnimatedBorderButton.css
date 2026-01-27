@@ -1,142 +1,77 @@
+/* From Uiverse.io by MuhammadHasann */
 .button {
-    position: relative;
-    width: 12rem;
-    height: 3.5rem;
+    --dark: #181818;
+    --light: #d9d9d9;
+    --active: 0;
+
     cursor: pointer;
-    border: none;
-    background: none;
-}
+    position: relative;
 
-.button svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-}
-
-.border {
-    width: 100%;
-    height: 100%;
-    stroke: black;
-    stroke-width: 2px;
-    fill: #0000;
-    rx: 1em;
-    ry: 1em;
-    stroke-dasharray: 25;
-    transition: fill 0.25s;
-    animation: 4s linear infinite stroke-animation;
-}
-
-.button:hover .border {
-    fill: #0001;
-}
-
-.button:focus .border {
-    transition: fill 0.25s 7.75s;
-    fill: #0000;
-}
-
-@keyframes stroke-animation {
-    0% {
-        stroke-dashoffset: 100;
-    }
-
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-.txt-upload {
-    position: absolute;
-    inset: 0;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+
+    transform-origin: center;
+
+    background-color: transparent;
+
+    border: none;
+}
+
+.button:hover {
+    --active: 1;
+}
+
+.icon_cont {
+    overflow: clip;
+
+    display: flex;
     justify-content: center;
+    align-items: center;
+
+    width: calc(var(--active) * 1.5rem + (1 - var(--active)) * 0.5rem);
+    height: calc(var(--active) * 1.5rem + (1 - var(--active)) * 0.5rem);
+    background-color: hsla(0, 0%, 85%, var(--active));
+
+    border: 1px solid var(--light);
+    border-radius: 9999px;
+    transition: all 0.5s ease-in-out;
 }
 
-.txt-upload::after {
+.icon {
+    font-size: 0.75rem;
+    color: var(--dark);
+    line-height: 1rem;
+
+    transform: translateX(calc(-1rem * (1 - var(--active))));
+    transition: transform 0.5s ease-in-out;
+}
+
+.text_button {
+    position: relative;
+
+    display: inline-block;
+
+    padding-block: 0.5rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light);
+
+    text-transform: capitalize;
+}
+
+.text_button::before {
     content: "";
-}
 
-.button:focus .rect {
-    stroke-dasharray: 50;
-}
+    position: absolute;
+    bottom: 0;
+    right: 0;
 
-.button:focus .border {
-    stroke: #0000;
-}
+    width: calc((1 - var(--active)) * 100%);
+    height: 1px;
+    background-color: var(--light);
 
-.button:focus .txt-upload {
-    opacity: 0;
-    transition: opacity 0.25s 8s;
-}
-
-.button:focus .txt-upload::after {
-    animation: 0.66666s anim step-end forwards,
-        1.33333s 0.6666s anim2 linear infinite alternate;
-}
-
-@keyframes anim {
-    0% {
-        content: "i";
-    }
-
-    50% {
-        content: "in";
-    }
-
-    to {
-        content: "ing";
-    }
-}
-
-@keyframes anim2 {
-    0% {
-        content: "ing";
-    }
-
-    33% {
-        content: "ing.";
-    }
-
-    66% {
-        content: "ing..";
-    }
-
-    to {
-        content: "ing...";
-    }
-}
-
-.loading {
-    width: 100%;
-    height: 100%;
-    stroke: #0055d4;
-    stroke-width: 2px;
-    fill: none;
-    rx: 1em;
-    ry: 1em;
-    stroke-dasharray: 0 100;
-}
-
-.button:focus .loading {
-    transition: stroke 0.5s 7.5s, stroke-dasharray 8s 0.5s ease-out;
-    stroke: #08ca08;
-    stroke-dasharray: 100 0;
-}
-
-.done {
-    fill: none;
-    stroke: #000;
-    stroke-dasharray: 0 100;
-}
-
-.button:focus .done-cloud {
-    transition: stroke-dasharray 0.75s 8.5s ease-out;
-    stroke-dasharray: 100 0;
-}
-
-.button:focus .done-check {
-    transition: stroke-dasharray 0.5s 9.2s ease-out;
-    stroke: #08ca08;
-    stroke-dasharray: 100 0;
+    border-radius: 9999px;
+    transition: width 0.5s ease-in-out;
 }
