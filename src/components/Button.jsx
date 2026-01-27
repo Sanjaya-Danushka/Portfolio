@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
+import "./Button.css";
 
-const Button = ({ className="", size, children }) => {
-  const baseClasses =
-    "relative overflow-hidden rounded-full  font-medium focus:outline-none focus-visible:ring-2 focus-visible: ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
+const Button = ({ size, children }) => {
+  const baseClasses = "btn";
 
   const sizeClasses = {
     sm: "px-4 py-2 text-sm",
