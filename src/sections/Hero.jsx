@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/purity */
 import {
+  ArrowDown,
+  ArrowDownCircle,
   ArrowLeftRight,
   ArrowRight,
+  ChevronDown,
   Download,
   Github,
   GithubIcon,
@@ -12,6 +15,21 @@ import {
 import Button from "../components/Button";
 import React from "react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
+
+const skills = [
+  "React",
+  "Next.js",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "CSS",
+  "HTML",
+  "GraphQL",
+  "REST APIs",
+  "Git",
+  "Docker",
+  "Jest",
+];
 
 const Hero = () => {
   return (
@@ -114,12 +132,45 @@ const Hero = () => {
                 {/* stats badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                   <div className="text-2xl font-bold text-primary">4+</div>
-                  <div className="text-xs text-muted-foreground">Years of Experience</div>
+                  <div className="text-xs text-muted-foreground">
+                    Years of Experience
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* Skills */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I work with:
+          </p>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, index) => (
+                <div className="shrink-0 px-8 py-4">
+                  <span
+                    key={index}
+                    className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                  >
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-700">
+        <a
+          href="#about"
+          className=" flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+        >
+          <span className="animate-bounce text-xs uppercase tracking-wider">
+            <ChevronDown className="w-6 h-6" />
+          </span>
+          Scroll
+        </a>
       </div>
     </section>
   );
