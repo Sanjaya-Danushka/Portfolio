@@ -47,23 +47,19 @@ const About = () => {
           </h2>
           {/* paragraphs */}
           <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay200">
-            <p>
+            <p className="text-base leading-relaxed">
               I'm a passionate software engineer with a knack for creating
               efficient and scalable web applications. With expertise in React,
               Next.js, and modern web technologies, I strive to deliver seamless
               user experiences that make a difference.
             </p>
-            <p>
+            <p className="text-base leading-relaxed">
               Beyond coding, I enjoy collaborating with diverse teams,
               contributing to open source projects, and continuously learning
-              new technologies to stay ahead in this ever-evolving field. Let's
-              build something amazing together!
+              new technologies to stay ahead in this ever-evolving field.
             </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto velit quidem maxime nesciunt, ratione neque adipisci
-              rerum iusto quo deserunt officiis vero! Quia libero magni, commodi
-              quos voluptatum dolorum? Eligendi?
+            <p className="text-base leading-relaxed">
+              Let's build something amazing together!
             </p>
           </div>
           {/* mission */}
@@ -80,13 +76,13 @@ const About = () => {
             {highlight.map((item, index) => (
               <div
                 key={index}
-                className="glass rounded-xl p-6 glow-border animate-fade-in animation-delay-400"
+                className="glass rounded-xl p-6 glow-border animate-fade-in animation-delay-400 hover:scale-105 hover:shadow-lg hover:glow-border-active transition-all duration-300 cursor-pointer"
               >
-                <item.icon className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-semibold text-secondary-foreground mb-2">
+                <item.icon className="w-8 h-8 text-primary mb-3 transition-transform duration-300 group-hover:scale-110" />
+                <h3 className="font-semibold text-secondary-foreground mb-2 transition-colors duration-300 hover:text-primary">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground transition-colors duration-300">
                   {item.description}
                 </p>
               </div>
