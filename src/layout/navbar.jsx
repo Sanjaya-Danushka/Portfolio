@@ -1,7 +1,7 @@
 
 import React from "react";
 import Button from "../components/Button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -33,10 +33,14 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="#"
-          className="group relative flex items-center"
+          className="group relative flex items-center gap-2"
         >
-          <span className="text-2xl font-bold tracking-tight text-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110">
-            PM
+          <div className="relative">
+            <Code className="w-8 h-8 text-primary transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12" />
+            <div className="absolute inset-0 bg-primary/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <span className="text-xl font-bold tracking-tight text-foreground transition-all duration-300 group-hover:text-primary">
+            SD
           </span>
           <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
         </a>

@@ -239,6 +239,39 @@
     backdrop-filter: blur(24px);
     border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
   }
+
+  .parallax-slow {
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(var(--color-background), var(--color-background)) padding-box,
+                linear-gradient(135deg, var(--color-primary), var(--color-secondary-foreground)) border-box;
+    border: 2px solid transparent;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
 }
 
 @keyframes slideFadeUp {
