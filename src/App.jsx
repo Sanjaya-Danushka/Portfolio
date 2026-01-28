@@ -6,6 +6,7 @@ import Projects from "./sections/Projects.jsx";
 import Experience from "./sections/Experience.jsx";
 import Testimonials from "./sections/Testimonials.jsx";
 import Contacts from "./sections/Contacts.jsx";
+import Footer from "./components/footer.jsx";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Experience />
         <Testimonials />
         <Contacts />
+        <Footer />
       </main>
     </div>
   );
