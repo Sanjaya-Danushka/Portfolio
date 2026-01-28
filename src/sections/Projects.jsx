@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useRef, useState } from "react";
 import ProjectsButton from "../components/projectsbutton.jsx";
-
 
 const projects = [
   {
@@ -169,7 +168,9 @@ const Projects = () => {
             </div>
           ))}
         </div>
-        <ProjectsButton />
+        <div className="flex justify-center">
+          <ProjectsButton />
+        </div>
       </div>
     </section>
   );
