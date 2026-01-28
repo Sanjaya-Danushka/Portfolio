@@ -5,23 +5,23 @@ import React, { useEffect, useRef, useState } from "react";
 const highlight = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable and efficient code.",
+    title: "Full-Cycle Development",
+    description: "Building complete end-to-end systems from design to deployment.",
   },
   {
     icon: Rocket,
-    title: "Problem Solving",
-    description: "Adept at tackling complex challenges.",
+    title: "DevOps Expertise",
+    description: "Automating workflows and managing cloud infrastructure.",
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Working effectively within diverse teams.",
+    title: "Open Source Leader",
+    description: "Contributing to open source and leading community projects.",
   },
   {
     icon: Lightbulb,
-    title: "Open Source Contributor",
-    description: "Contributing to open source projects.",
+    title: "Author & Educator",
+    description: "Author of 'The Art of Software Engineering' and tech education advocate.",
   },
 ];
 
@@ -66,10 +66,10 @@ const About = () => {
               ${isVisible ? "animate-fade-in animation-delay-100" : "opacity-0"}
             `}
             >
-              Building the future,
+              Empowering through
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                one line of code at a time.
+                open education and innovation.
               </span>
             </h2>
 
@@ -80,18 +80,13 @@ const About = () => {
             `}
             >
               <p className="text-base leading-relaxed">
-                I'm a passionate software engineer with a knack for creating
-                efficient and scalable web applications. With expertise in
-                React, Next.js, and modern web technologies, I strive to deliver
-                seamless user experiences that make a difference.
+                I'm a highly motivated Full-Cycle DevOps & Software Engineer with deep experience in building complete end-to-end systems — from application design and development to automation, deployment, and monitoring. I combine a Software Engineering mindset with DevOps principles to design, code, containerize, and deploy scalable solutions across modern cloud platforms.
               </p>
               <p className="text-base leading-relaxed">
-                Beyond coding, I enjoy collaborating with diverse teams,
-                contributing to open source projects, and continuously learning
-                new technologies to stay ahead in this ever-evolving field.
+                My passion for open-source collaboration, research, and accessible tech education drives me to keep innovating and sharing knowledge. I'm the author of "The Art of Software Engineering" and "A Guide to Cyber Ethics", focused on bridging gaps in tech literacy and contributing meaningfully to the global tech ecosystem.
               </p>
               <p className="text-base leading-relaxed">
-                Let's build something amazing together!
+                My mission is empowering underserved communities through open education, innovative development, and accessible learning tools — building not just software, but sustainable systems and opportunities for others.
               </p>
             </div>
 
@@ -102,8 +97,7 @@ const About = () => {
             `}
             >
               <p className="text-lg font-medium italic text-foreground">
-                My mission is to leverage technology to create impactful digital
-                solutions that enhance user experiences and drive innovation.
+                Empowering underserved communities through open education, innovative development, and accessible learning tools. I'm driven to bridge gaps in tech literacy and contribute meaningfully to the global tech ecosystem.
               </p>
             </div>
           </div>

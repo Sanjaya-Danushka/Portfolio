@@ -4,36 +4,36 @@ import ProjectsButton from "../components/projectsbutton.jsx";
 
 const projects = [
   {
-    title: "Project One",
-    description: "Description for project one and more details here.",
-    img: "/project1.png",
-    tags: ["React", "Node.js", "GraphQL"],
-    link: "#",
-    github: "#",
+    title: "NeoArch - Ultimate Package Manager",
+    description: "A unified package manager for Arch Linux supporting Pacman, AUR, Flatpak, npm, Git, and Docker with automated workflows and streamlined Docker integration.",
+    img: "/neoarch.png",
+    tags: ["Python", "Shell Scripting", "Linux", "DevOps"],
+    link: "https://github.com/Sanjaya-Danushka/Aurora",
+    github: "https://github.com/Sanjaya-Danushka/Aurora",
   },
   {
-    title: "Project Two",
-    description: "Description for project two.",
-    img: "/project2.png",
-    tags: ["React", "Node.js", "GraphQL"],
-    link: "#",
-    github: "#",
+    title: "ShopEase E-commerce Platform",
+    description: "Enterprise-grade e-commerce solution with AI-powered chatbot, multi-payment methods, advanced analytics, and complete admin panel. Production-ready with 10k+ user capacity.",
+    img: "/shopease.png",
+    tags: ["React", "Node.js", "AI", "Stripe", "MongoDB"],
+    link: "https://github.com/Sanjaya-Danushka/e-commerce-store",
+    github: "https://github.com/Sanjaya-Danushka/e-commerce-store",
   },
   {
-    title: "Project Three",
-    description: "Description for project three.",
-    img: "/project3.png",
-    tags: ["React", "Node.js", "GraphQL"],
-    link: "#",
-    github: "#",
+    title: "WhaleCraft - Arch Linux Automation",
+    description: "Universal post-install automation system that adapts to any hardware configuration with intelligent detection, reducing Arch setup time from hours to minutes.",
+    img: "/whalecraft.png",
+    tags: ["Bash", "Shell Scripting", "Linux", "Automation"],
+    link: "https://github.com/Sanjaya-Danushka/whalecraft",
+    github: "https://github.com/Sanjaya-Danushka/whalecraft",
   },
   {
-    title: "Project Four",
-    description: "Description for project four.",
-    img: "/project4.png",
-    tags: ["React", "Node.js", "GraphQL"],
-    link: "#",
-    github: "#",
+    title: "WhaleKit - Minimal AUR Helper",
+    description: "Lightweight AUR helper for Arch Linux with interactive experience, package details preview, and scriptable automation for beginners and power users.",
+    img: "/whalekit.png",
+    tags: ["Shell Scripting", "Arch Linux", "AUR", "CLI"],
+    link: "https://github.com/Sanjaya-Danushka/whalekit",
+    github: "https://github.com/Sanjaya-Danushka/whalekit",
   },
 ];
 
@@ -93,8 +93,8 @@ const Projects = () => {
               ${isVisible ? "animate-fade-in animation-delay-200" : "opacity-0"}
             `}
           >
-            A selection of projects showcasing my skills in modern web
-            development, problem-solving, and clean architecture.
+            A selection of open-source projects showcasing my expertise in DevOps automation, 
+            full-stack development, and Linux system engineering.
           </p>
         </div>
 

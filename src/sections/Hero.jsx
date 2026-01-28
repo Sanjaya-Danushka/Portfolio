@@ -13,18 +13,18 @@ import React from "react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
 
 const skills = [
-  "React",
-  "Next.js",
+  "Python",
+  "Java",
   "JavaScript",
-  "TypeScript",
+  "React",
   "Node.js",
-  "CSS",
-  "HTML",
-  "GraphQL",
-  "REST APIs",
-  "Git",
+  "DevOps",
   "Docker",
-  "Jest",
+  "Kubernetes",
+  "AWS",
+  "Terraform",
+  "Git",
+  "Shell Scripting",
 ];
 
 const Hero = () => {
@@ -65,24 +65,25 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Software Engineer • React Specialist
+              Full-Cycle DevOps & Software Engineer • Open Source Contributor
             </div>
 
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                Crafting{" "}
-                <span className="text-primary glow-text">digital</span>
+                Sanjaya{" "}
+                <span className="text-primary glow-text">Danushka</span>
                 <br />
-                experiences with
+                Full-Cycle DevOps &
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  precision
+                  Software Engineer
                 </span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl">
-                I build scalable web applications using React, Next.js, and modern
-                technologies — delivering fast, clean, and delightful user experiences.
+                Building complete end-to-end systems from application design to deployment. 
+                Author of "The Art of Software Engineering" and passionate about open-source 
+                collaboration and accessible tech education.
               </p>
             </div>
 
@@ -96,15 +97,30 @@ const Hero = () => {
             <div className="flex items-center gap-4">
               <span className="text-sm text-muted-foreground">Follow me:</span>
 
-              {[Github, Linkedin, Twitter].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="p-2 rounded-full glass hover:bg-primary/10 transition"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a
+                href="https://github.com/Sanjaya-Danushka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full glass hover:bg-primary/10 transition"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://linkedin.com/in/sanjaya-danushka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full glass hover:bg-primary/10 transition"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com/sanjayadanushka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full glass hover:bg-primary/10 transition"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -129,7 +145,7 @@ const Hero = () => {
                 </div>
 
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 shadow-lg">
-                  <div className="text-2xl font-bold text-primary">4+</div>
+                  <div className="text-2xl font-bold text-primary">3+</div>
                   <div className="text-xs text-muted-foreground">Years Experience</div>
                 </div>
               </div>
@@ -140,7 +156,7 @@ const Hero = () => {
         {/* Skills Marquee */}
         <div className="mt-20">
           <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies I work with:
+            Core Technologies & Expertise:
           </p>
 
           <div className="relative overflow-hidden">
