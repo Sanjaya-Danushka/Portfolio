@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Briefcase, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 const experience = [
   {
@@ -40,15 +42,44 @@ const experience = [
   },
 ];
 
+const cardVariants = {
+  hidden: (direction) => ({
+    opacity: 0,
+    x: direction === "left" ? -80 : 80,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const dotVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: { duration: 0.4, ease: "backOut" },
+  },
+};
+
 const Experience = () => {
   return (
     <section id="experience" className="relative py-32 overflow-hidden">
-      {/* background glow */}
+      {/* glow */}
       <div className="absolute top-1/2 left-1/2 w-125 h-125 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* header */}
-        <div className="max-w-3xl mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mb-24"
+        >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-6">
             <Briefcase className="w-4 h-4 text-primary" />
             Career Path
@@ -65,11 +96,11 @@ const Experience = () => {
             A journey through the roles and teams where I crafted real-world
             digital products.
           </p>
-        </div>
+        </motion.div>
 
         {/* timeline */}
         <div className="relative">
-          {/* center vertical line */}
+          {/* center line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border/60 -translate-x-1/2" />
 
           <div className="space-y-24">
@@ -83,15 +114,28 @@ const Experience = () => {
                 >
                   {/* LEFT CARD */}
                   {isLeft && (
-                    <div className="md:pr-16 flex justify-end">
+                    <motion.div
+                      custom="left"
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="md:pr-16 flex justify-end"
+                    >
                       <ExperienceCard item={item} />
-                    </div>
+                    </motion.div>
                   )}
 
                   {/* CENTER DOT */}
-                  <div className="absolute left-1/2 top-8 -translate-x-1/2 z-10">
+                  <motion.div
+                    variants={dotVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="absolute left-1/2 top-8 -translate-x-1/2 z-10"
+                  >
                     <div
-                      className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
+                      className={`w-6 h-6 rounded-full flex items-center justify-center ${
                         item.current
                           ? "bg-primary shadow-lg shadow-primary/40 ring-4 ring-primary/20"
                           : "bg-background border border-border"
@@ -103,20 +147,20 @@ const Experience = () => {
                         }`}
                       />
                     </div>
-
-                    {/* connector */}
-                    <div
-                      className={`hidden md:block absolute top-3 h-px w-16 bg-border ${
-                        isLeft ? "-left-16" : "left-6"
-                      }`}
-                    />
-                  </div>
+                  </motion.div>
 
                   {/* RIGHT CARD */}
                   {!isLeft && (
-                    <div className="md:pl-16 flex justify-start md:col-start-2">
+                    <motion.div
+                      custom="right"
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="md:pl-16 flex justify-start md:col-start-2"
+                    >
                       <ExperienceCard item={item} />
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               );
@@ -129,7 +173,11 @@ const Experience = () => {
 };
 
 const ExperienceCard = ({ item }) => (
-  <div className="glass max-w-lg rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+  <motion.div
+    whileHover={{ y: -6 }}
+    transition={{ type: "spring", stiffness: 200 }}
+    className="glass max-w-lg rounded-2xl p-6 md:p-8 shadow-lg"
+  >
     <div className="flex flex-wrap items-center gap-4 mb-4">
       <h3 className="text-xl font-semibold">
         {item.role} · {item.company}
@@ -158,7 +206,7 @@ const ExperienceCard = ({ item }) => (
         </span>
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 export default Experience;
