@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
+import ProjectsButton from "../components/projectsbutton.jsx";
+
 
 const projects = [
   {
@@ -145,7 +148,7 @@ const Projects = () => {
                       <span
                         key={i}
                         className="text-xs px-2 py-1 rounded-full
-                          bg-primary/10 text-primary"
+                          bg-primary/10 text-primary medium border border-primary/20 hover:border-primary/50"
                       >
                         {tag}
                       </span>
@@ -166,6 +169,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        <ProjectsButton />
       </div>
     </section>
   );

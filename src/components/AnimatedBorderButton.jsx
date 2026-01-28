@@ -1,35 +1,14 @@
 import React from "react";
+import { ArrowDownRight } from "lucide-react";
 import "./AnimatedBorderButton.css";
-import {
-  ArrowDown,
-  ArrowDownLeftIcon,
-  ArrowDownSquareIcon,
-  Download,
-  DownloadCloud,
-  DownloadIcon,
-} from "lucide-react";
 
-const Downloadcv = () => {
-  const link = document.createElement("a");
-  link.href = "/CV_Jane_Doe.pdf"; // Replace with the actual path to the CV file
-  link.download = "CV_Jane_Doe.pdf"; // Replace with the desired file name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-const AnimatedBorderButton = () => {
+const DownloadCv = () => {
   return (
-    <div>
-      <button class="button">
-        <div class="icon_cont">
-          <span class="icon">
-            <ArrowDownLeftIcon />
-          </span>
-        </div>
-        <span class="text_button">Download CV</span>
-      </button>
-    </div>
+    <a href="/CV_Jane_Doe.pdf" download className="download-cv">
+      <span>Download CV</span>
+      <ArrowDownRight size={18} />
+    </a>
   );
 };
 
-export default AnimatedBorderButton;
+export default DownloadCv;
