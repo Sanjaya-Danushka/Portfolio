@@ -5,39 +5,39 @@ import { motion } from "framer-motion";
 
 const experience = [
   {
-    period: "Jan 2020 - Present",
-    company: "Tech Corp",
-    role: "Software Engineer",
+    period: "Mar 2022 - Present",
+    company: "Open Source Developers Community (OSDC)",
+    role: "Software Developer",
     description:
-      "Developing scalable web applications using React and Node.js, focusing on performance and clean architecture.",
-    technologies: ["React", "Node.js", "JavaScript", "CSS"],
+      "Collaborating with a team of developers to create open-source solutions. Led a project to implement a new feature that increased system efficiency by 20%. Regularly contributing to code reviews and product documentation.",
+    technologies: ["Python", "JavaScript", "DevOps", "Open Source"],
     current: true,
   },
   {
-    period: "Mar 2018 - Dec 2019",
-    company: "Startup Inc",
-    role: "Frontend Developer",
+    period: "2023 - 2027",
+    company: "Asia e University",
+    role: "Bachelor of ICT (Hons) Software Engineering",
     description:
-      "Built responsive, accessible interfaces and collaborated closely with designers and backend teams.",
-    technologies: ["React", "JavaScript", "HTML5", "CSS3"],
-    current: false,
+      "Pursuing undergraduate degree in Software Engineering with focus on Full-Stack Development, Cybersecurity & Information Security, and Computer Networking & IT Infrastructure.",
+    technologies: ["Software Engineering", "Full-Stack Development", "Cybersecurity", "Java"],
+    current: true,
   },
   {
-    period: "Jun 2017 - Aug 2017",
-    company: "Web Solutions",
-    role: "Intern",
+    period: "Nov 2023 - 2027",
+    company: "Open Source Society University",
+    role: "Computer Science",
     description:
-      "Assisted in developing client websites and internal tools while learning modern frontend workflows.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    current: false,
+      "Advanced computer science education covering Full-Stack Development, Cybersecurity, Machine Learning, and modern software development practices.",
+    technologies: ["Computer Science", "Machine Learning", "Python", "Full-Stack Development"],
+    current: true,
   },
   {
-    period: "Jan 2016 - May 2017",
-    company: "Code Labs",
-    role: "Junior Developer",
+    period: "2022 - 2023",
+    company: "IMBS Green Campus - Sri Lanka",
+    role: "Diploma in Information Technology",
     description:
-      "Worked on multiple web projects, gaining strong fundamentals in UI development and teamwork.",
-    technologies: ["HTML", "CSS", "JavaScript"],
+      "Completed Diploma in Information Technology with Batch Top achievement, focusing on software development fundamentals and IT infrastructure.",
+    technologies: ["Software Development", "IT Fundamentals", "Database Management"],
     current: false,
   },
 ];
@@ -72,8 +72,8 @@ const Experience = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg mt-4">
-            A journey through the roles and teams where I crafted real-world
-            digital products.
+            My journey through open-source contributions, education, and professional development 
+            in software engineering and DevOps.
           </p>
         </motion.div>
 

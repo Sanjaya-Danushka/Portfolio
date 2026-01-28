@@ -5,53 +5,46 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Product Manager · Tech Corp",
+    name: "Alex Thompson",
+    role: "Software Engineer | AI Enthusiast",
     image: "https://i.pravatar.cc/150?img=32",
     message:
-      "Working with this developer was a game-changer. Clean code, great communication, and always delivered beyond expectations.",
+      "I've seen Sanjaya Danushka grow as a passionate undergraduate software engineer who stays constantly updated with real-world technologies. He's skilled in Java, Python, and Dart, and actively contributes to open source and educational projects. Sanjaya is hardworking, eager to learn, and a great team player.",
   },
   {
-    name: "Michael Lee",
-    role: "CTO · Startup Inc",
-    image: "https://i.pravatar.cc/150?img=12",
-    message:
-      "An exceptional frontend engineer with a sharp eye for detail. The UI/UX quality consistently impressed our entire team.",
-  },
-  {
-    name: "Emily Carter",
-    role: "Design Lead · Creative Studio",
+    name: "Jordan Mitchell",
+    role: "Senior Developer at Tech Company",
     image: "https://i.pravatar.cc/150?img=47",
     message:
-      "They have a rare ability to turn complex ideas into elegant, user-friendly interfaces. A true professional.",
+      "I've had the pleasure of collaborating with Sanjaya Danushka on several projects, and I can confidently say his dedication to software engineering and technology research is exceptional. His strong command of languages like Java, Python, and Dart, combined with his enthusiasm for open-source contribution, truly distinguishes him in the tech space.",
   },
   {
-    name: "David Kim",
-    role: "Engineering Manager · SaaS Co",
+    name: "Morgan Riley",
+    role: "DevOps Engineer at Enterprise Solutions",
     image: "https://i.pravatar.cc/150?img=22",
     message:
-      "Reliable, proactive, and highly skilled. One of the best engineers I’ve had the pleasure of working with.",
+      "I've had the pleasure of knowing as well as working with Sanjaya Dhanushka, and I can say with confidence that one of the most passionate and dedicated people I've ever met is him within the field of software engineering. Sanjaya expertly applies a base of technical knowledge and thinks critically with extraordinary innovation.",
   },
   {
-    name: "Olivia Brown",
-    role: "Founder · Startup Studio",
+    name: "Casey Anderson",
+    role: "Full Stack Developer | Undergraduate Student",
     image: "https://i.pravatar.cc/150?img=5",
     message:
-      "A rare blend of creativity and technical excellence. Every project benefited from their attention to detail.",
+      "Sanjaya Dhanushka is a dedicated professional in the software field with a clear passion for technology and innovation. His presence reflects a strong commitment to staying current with industry trends and sharing valuable insights. He brings a positive and forward-thinking attitude to the tech community.",
   },
   {
-    name: "James Wilson",
-    role: "Lead Developer · Web Agency",
+    name: "Taylor Parker",
+    role: "Entrepreneur | DevOps Enthusiast | Undergraduate",
     image: "https://i.pravatar.cc/150?img=18",
     message:
-      "Superb problem solver. Always delivers on time and writes clean, scalable code.",
+      "Sanjaya has a natural talent for networking, he connects people with ease and leaves a lasting positive impression. His genuine warmth, humility, and professionalism make interactions meaningful. A truly good person who strengthens any professional circle he's part of.",
   },
   {
-    name: "Ava Martinez",
-    role: "Design Director · Creative Lab",
+    name: "Jamie Foster",
+    role: "Creative Professional | Freelancer",
     image: "https://i.pravatar.cc/150?img=56",
     message:
-      "Great sense of design and usability. The interfaces were intuitive and visually stunning.",
+      "I've had the opportunity to work with Sanjaya, and I can confidently say he is one of the most intelligent and quick-thinking individuals I've met. His ability to understand complex concepts and find creative solutions is truly impressive.",
   },
 ];
 
