@@ -105,9 +105,9 @@ const Projects = () => {
               key={index}
               className={`group relative rounded-2xl overflow-hidden
                 transition-all duration-700
-                hover:-translate-y-3 hover:shadow-2xl
+                hover:-translate-y-4 hover:shadow-2xl
                 ${isVisible ? "animate-slide-fade-up" : "opacity-0"}
-              `}
+                hover-lift glass-hover`}
               style={{
                 animationDelay: isVisible ? `${index * 150}ms` : "0ms",
               }}
@@ -123,7 +123,12 @@ const Projects = () => {
                 />
 
                 {/* gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/70" />
+                
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 animate-shimmer"></div>
+                </div>
               </div>
 
               {/* Floating Glass Content */}
@@ -131,13 +136,13 @@ const Projects = () => {
                 <div
                   className="glass rounded-xl p-6 glow-border
                   transition-all duration-500
-                  group-hover:backdrop-blur-lg"
+                  group-hover:backdrop-blur-lg group-hover:scale-105 group-hover:border-primary/40"
                 >
-                  <h3 className="text-xl font-semibold text-secondary-foreground mb-2">
+                  <h3 className="text-xl font-semibold text-secondary-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
 
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="text-sm text-muted-foreground line-clamp-2 group-hover:text-foreground transition-colors duration-300">
                     {project.description}
                   </p>
 
@@ -147,7 +152,9 @@ const Projects = () => {
                       <span
                         key={i}
                         className="text-xs px-2 py-1 rounded-full
-                          bg-primary/10 text-primary medium border border-primary/20 hover:border-primary/50"
+                          bg-primary/10 text-primary medium border border-primary/20 
+                          hover:border-primary/50 hover:bg-primary/20 transition-all duration-300
+                          hover:scale-110"
                       >
                         {tag}
                       </span>
@@ -158,7 +165,9 @@ const Projects = () => {
                   <div className="flex gap-4 mt-4 text-sm">
                     <a
                       href={project.github}
-                      className="text-muted-foreground hover:text-primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-105 inline-block"
                     >
                       GitHub
                     </a>

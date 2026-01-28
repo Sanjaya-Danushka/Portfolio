@@ -54,8 +54,9 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 60%, transparent);
-
+    text-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 60%, transparent),
+                 0 0 40px color-mix(in srgb, var(--color-primary) 40%, transparent),
+                 0 0 60px color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 
   .glow-border {
@@ -77,7 +78,6 @@
       filter: blur(0);
     }
   }
-
 
   @keyframes slow-drift {
 
@@ -121,6 +121,41 @@
     }
   }
 
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 40%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 60%, transparent);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out both;
   }
@@ -131,6 +166,20 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary) 20%, transparent), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s ease-out;
   }
 
   .animation-delay-100 {
@@ -165,7 +214,31 @@
     animation: slow-drift 20s ease-in-out infinite;
   }
 
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary-foreground));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+    backdrop-filter: blur(24px);
+    border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
 }
 
 @keyframes slideFadeUp {

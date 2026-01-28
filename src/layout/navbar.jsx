@@ -33,21 +33,25 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
+          className="group relative flex items-center"
         >
-          PM<span className="text-primary">.</span>
+          <span className="text-2xl font-bold tracking-tight text-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110">
+            PM
+          </span>
+          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
         </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-1">
-          <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
+          <div className="glass rounded-full px-3 py-2 flex items-center gap-1 backdrop-blur-lg border border-border/40">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-primary/10 hover:scale-105 transition-all duration-300 relative group"
               >
                 {link.label}
+                <span className="absolute inset-0 rounded-full bg-primary/5 scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               </a>
             ))}
           </div>
@@ -72,20 +76,26 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-strong animate-fade-in z-40">
+        <div className="md:hidden glass-strong animate-slide-fade-up z-40 border-t border-border/20">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground py-2 transition"
+                className="text-lg text-muted-foreground hover:text-foreground py-2 px-4 rounded-lg hover:bg-primary/10 transition-all duration-300 transform translate-x-0 hover:translate-x-2"
+                style={{
+                  animationDelay: `${index * 100}ms`
+                }}
               >
                 {link.label}
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 transform scale-100 hover:scale-105 transition-transform duration-300"
+            >
               <a href="#contact">Contact Me</a>
             </Button>
           </div>
