@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Briefcase, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
@@ -46,7 +47,7 @@ const Experience = () => {
     <section id="experience" className="relative py-28 overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 w-[520px] h-[520px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 left-1/2 w-130 h-130 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <div className="container mx-auto px-6">
@@ -161,40 +162,52 @@ const AnimatedCard = ({ item, direction }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.6, ease: "easeOut" }}
     whileHover={{ y: -6 }}
-    className="glass max-w-lg rounded-2xl p-6 md:p-8 shadow-lg"
+    className={`
+      relative glass max-w-lg rounded-2xl p-6 md:p-8
+      border border-border/60
+      transition-all duration-300
+      hover:border-primary/60
+      hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)]
+      ${item.current ? "border-primary/70 shadow-[0_0_45px_-10px_rgba(99,102,241,0.8)]" : ""}
+    `}
   >
-    <div className="flex flex-wrap items-center gap-4 mb-4">
-      <h3 className="text-lg md:text-xl font-semibold">
-        {item.role} · {item.company}
-      </h3>
-      {item.current && (
-        <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
-          Current
-        </span>
-      )}
-    </div>
+    {/* Glow overlay */}
+    <div className="pointer-events-none absolute inset-0 rounded-2xl bg-linear-to-r from-primary/10 via-transparent to-primary/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
-    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-      <Calendar className="w-4 h-4" />
-      {item.period}
-    </div>
+    {/* Content */}
+    <div className="relative z-10">
+      <div className="flex flex-wrap items-center gap-4 mb-4">
+        <h3 className="text-lg md:text-xl font-semibold">
+          {item.role} · {item.company}
+        </h3>
+        {item.current && (
+          <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
+            Current
+          </span>
+        )}
+      </div>
 
-    <p className="text-muted-foreground mb-6 text-sm md:text-base">
-      {item.description}
-    </p>
+      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+        <Calendar className="w-4 h-4" />
+        {item.period}
+      </div>
 
-    <div className="flex flex-wrap gap-2">
-      {item.technologies.map((tech, i) => (
-        <span
-          key={i}
-          className="text-xs px-3 py-1 rounded-full border border-border/60 bg-background/60"
-        >
-          {tech}
-        </span>
-      ))}
+      <p className="text-muted-foreground mb-6 text-sm md:text-base">
+        {item.description}
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        {item.technologies.map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs px-3 py-1 rounded-full border border-border/60 bg-background/60 hover:border-primary/50"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </div>
   </motion.div>
 );
 
 export default Experience;
-``
