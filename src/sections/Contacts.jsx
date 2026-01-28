@@ -1,9 +1,40 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const mailtoLink = `mailto:dsanjaya712@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+    
+    // Reset form after a delay
+    setTimeout(() => {
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setIsSubmitting(false);
+    }, 1000);
+  };
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
       {/* Background glow */}
@@ -56,7 +87,7 @@ const Contact = () => {
                     Location
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    Your City, Country
+                    Badulla, Sri Lanka
                   </p>
                 </div>
               </div>
@@ -68,7 +99,7 @@ const Contact = () => {
                     Email
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    your.email@example.com
+                    dsanjaya712@gmail.com
                   </p>
                 </div>
               </div>
@@ -80,7 +111,7 @@ const Contact = () => {
                     Phone
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    +123 456 7890
+                    +94 75 341 4017
                   </p>
                 </div>
               </div>
@@ -88,19 +119,25 @@ const Contact = () => {
               {/* Social Links */}
               <div className="flex gap-3 flex-wrap">
                 <a
-                  href="#"
+                  href="https://linkedin.com/in/sanjaya-danushka"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm px-4 py-2 rounded-full border border-border/60 bg-background/60 hover:border-primary/60 transition"
                 >
                   LinkedIn
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Sanjaya-Danushka"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm px-4 py-2 rounded-full border border-border/60 bg-background/60 hover:border-primary/60 transition"
                 >
                   GitHub
                 </a>
                 <a
-                  href="#"
+                  href="https://twitter.com/sanjayadanushka"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm px-4 py-2 rounded-full border border-border/60 bg-background/60 hover:border-primary/60 transition"
                 >
                   Twitter
@@ -109,37 +146,54 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder="Your Name"
+                  required
                   className="glass rounded-xl p-4 border border-border/60 bg-background/40 focus:outline-none focus:border-primary/60 transition"
                 />
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder="Your Email"
+                  required
                   className="glass rounded-xl p-4 border border-border/60 bg-background/40 focus:outline-none focus:border-primary/60 transition"
                 />
               </div>
 
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleInputChange}
                 placeholder="Subject"
+                required
                 className="glass rounded-xl p-4 border border-border/60 bg-background/40 focus:outline-none focus:border-primary/60 transition w-full"
               />
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 rows="4"
                 placeholder="Message"
+                required
                 className="glass rounded-xl p-4 border border-border/60 bg-background/40 focus:outline-none focus:border-primary/60 transition w-full"
               />
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)] transition"
+                disabled={isSubmitting}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)] transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
                 <Send className="w-4 h-4" />
               </button>
             </form>

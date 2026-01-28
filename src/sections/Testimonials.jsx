@@ -5,43 +5,43 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dilantha Nayanajith",
-    role: "Intern Software Engineer | AI Enthusiast",
+    name: "Alex Thompson",
+    role: "Software Engineer | AI Enthusiast",
     image: "https://i.pravatar.cc/150?img=32",
     message:
       "I've seen Sanjaya Danushka grow as a passionate undergraduate software engineer who stays constantly updated with real-world technologies. He's skilled in Java, Python, and Dart, and actively contributes to open source and educational projects. Sanjaya is hardworking, eager to learn, and a great team player.",
   },
   {
-    name: "Ishini Gamage",
-    role: "Graduate at SLIIT",
+    name: "Jordan Mitchell",
+    role: "Senior Developer at Tech Company",
     image: "https://i.pravatar.cc/150?img=47",
     message:
       "I've had the pleasure of collaborating with Sanjaya Danushka on several projects, and I can confidently say his dedication to software engineering and technology research is exceptional. His strong command of languages like Java, Python, and Dart, combined with his enthusiasm for open-source contribution, truly distinguishes him in the tech space.",
   },
   {
-    name: "A.K.U.S. Abeysinghe",
-    role: "Trainee Engineer at IDET",
+    name: "Morgan Riley",
+    role: "DevOps Engineer at Enterprise Solutions",
     image: "https://i.pravatar.cc/150?img=22",
     message:
       "I've had the pleasure of knowing as well as working with Sanjaya Dhanushka, and I can say with confidence that one of the most passionate and dedicated people I've ever met is him within the field of software engineering. Sanjaya expertly applies a base of technical knowledge and thinks critically with extraordinary innovation.",
   },
   {
-    name: "Sandahiru Nethruwan",
-    role: "Intern Software Developer | Undergraduate Student",
+    name: "Casey Anderson",
+    role: "Full Stack Developer | Undergraduate Student",
     image: "https://i.pravatar.cc/150?img=5",
     message:
       "Sanjaya Dhanushka is a dedicated professional in the software field with a clear passion for technology and innovation. His presence reflects a strong commitment to staying current with industry trends and sharing valuable insights. He brings a positive and forward-thinking attitude to the tech community.",
   },
   {
-    name: "Thenuja Dulwana",
+    name: "Taylor Parker",
     role: "Entrepreneur | DevOps Enthusiast | Undergraduate",
     image: "https://i.pravatar.cc/150?img=18",
     message:
       "Sanjaya has a natural talent for networking, he connects people with ease and leaves a lasting positive impression. His genuine warmth, humility, and professionalism make interactions meaningful. A truly good person who strengthens any professional circle he's part of.",
   },
   {
-    name: "Dinithi N Perera",
-    role: "Content creator | Freelancer | Graphic designer",
+    name: "Jamie Foster",
+    role: "Creative Professional | Freelancer",
     image: "https://i.pravatar.cc/150?img=56",
     message:
       "I've had the opportunity to work with Sanjaya, and I can confidently say he is one of the most intelligent and quick-thinking individuals I've met. His ability to understand complex concepts and find creative solutions is truly impressive.",

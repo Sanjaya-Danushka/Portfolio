@@ -28,12 +28,12 @@ const projects = [
     github: "https://github.com/Sanjaya-Danushka/whalecraft",
   },
   {
-    title: "WhaleKit - Minimal AUR Helper",
-    description: "Lightweight AUR helper for Arch Linux with interactive experience, package details preview, and scriptable automation for beginners and power users.",
-    img: "/whalekit.png",
-    tags: ["Shell Scripting", "Arch Linux", "AUR", "CLI"],
-    link: "https://github.com/Sanjaya-Danushka/whalekit",
-    github: "https://github.com/Sanjaya-Danushka/whalekit",
+    title: "Bloomly – Flower Shop UI Design",
+    description: "A soft and elegant eCommerce interface designed for plant and flower lovers. Features clean layouts, warm color palette with rose gold accents, and thoughtful UX details for a calming shopping experience.",
+    img: "/bloomly.png",
+    tags: ["UI Design", "Figma", "eCommerce", "UX Design"],
+    link: "https://www.figma.com/design/UEFW2xeQ9k8soMSf3fsbiv/Untitled",
+    github: "#",
   },
 ];
 
