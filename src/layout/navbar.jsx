@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React from "react";
 import Button from "../components/Button";
 import { Menu, X } from "lucide-react";
