@@ -7,33 +7,64 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Product Manager · Tech Corp",
+    image: "https://i.pravatar.cc/150?img=32",
     message:
       "Working with this developer was a game-changer. Clean code, great communication, and always delivered beyond expectations.",
   },
   {
     name: "Michael Lee",
     role: "CTO · Startup Inc",
+    image: "https://i.pravatar.cc/150?img=12",
     message:
       "An exceptional frontend engineer with a sharp eye for detail. The UI/UX quality consistently impressed our entire team.",
   },
   {
     name: "Emily Carter",
     role: "Design Lead · Creative Studio",
+    image: "https://i.pravatar.cc/150?img=47",
     message:
       "They have a rare ability to turn complex ideas into elegant, user-friendly interfaces. A true professional.",
+  },
+  {
+    name: "David Kim",
+    role: "Engineering Manager · SaaS Co",
+    image: "https://i.pravatar.cc/150?img=22",
+    message:
+      "Reliable, proactive, and highly skilled. One of the best engineers I’ve had the pleasure of working with.",
+  },
+  {
+    name: "Olivia Brown",
+    role: "Founder · Startup Studio",
+    image: "https://i.pravatar.cc/150?img=5",
+    message:
+      "A rare blend of creativity and technical excellence. Every project benefited from their attention to detail.",
+  },
+  {
+    name: "James Wilson",
+    role: "Lead Developer · Web Agency",
+    image: "https://i.pravatar.cc/150?img=18",
+    message:
+      "Superb problem solver. Always delivers on time and writes clean, scalable code.",
+  },
+  {
+    name: "Ava Martinez",
+    role: "Design Director · Creative Lab",
+    image: "https://i.pravatar.cc/150?img=56",
+    message:
+      "Great sense of design and usability. The interfaces were intuitive and visually stunning.",
   },
 ];
 
 const Testimonials = () => {
   return (
     <section id="testimonials" className="relative py-28 overflow-hidden">
-      {/* Background glow */}
+      {/* background glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 w-130 h-130 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <div className="container mx-auto px-6">
-        {/* Header */}
+        {/* header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,52 +85,62 @@ const Testimonials = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg mt-4">
-            Feedback from teammates, leaders, and collaborators I’ve worked
-            with.
+            Feedback from people I’ve had the pleasure to work with.
           </p>
         </motion.div>
 
-        {/* Testimonials grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
-              className={`
-                relative glass rounded-2xl p-6 md:p-8
-                border border-border/60
-                transition-all duration-300
-                hover:border-primary/60
-                hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)]
-              `}
-            >
-              {/* Glow overlay */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-linear-to-r from-primary/10 via-transparent to-primary/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                {/* Quote icon */}
-                <Quote className="w-8 h-8 text-primary mb-4 opacity-80" />
-
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  “{item.message}”
-                </p>
-
-                <div>
-                  <p className="font-semibold text-secondary-foreground">
-                    {item.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{item.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Smooth Infinite Slider */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 45, // SLOWER
+              ease: "linear",
+            }}
+          >
+            {[...testimonials, ...testimonials].map((item, index) => (
+              <TestimonialCard key={index} item={item} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
+  );
+};
+
+const TestimonialCard = ({ item }) => {
+  return (
+    <motion.div
+      whileHover={{ y: -8 }}
+      className="
+        glass min-w-70 sm:min-w-75 md:min-w-85 lg:min-w-90
+        rounded-2xl p-6 md:p-8
+        border border-border/60
+        hover:border-primary/60
+        hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)]
+        transition-all duration-300
+      "
+    >
+      <Quote className="w-6 h-6 text-primary mb-4 opacity-70" />
+
+      <p className="text-muted-foreground mb-6 leading-relaxed">
+        “{item.message}”
+      </p>
+
+      <div className="flex items-center gap-4">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-12 h-12 rounded-full border border-primary/40"
+        />
+        <div>
+          <p className="font-semibold text-secondary-foreground">{item.name}</p>
+          <p className="text-sm text-muted-foreground">{item.role}</p>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
